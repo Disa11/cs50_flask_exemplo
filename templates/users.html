@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Users
+{% endblock %}
+
+{% block headtext %}
+  <style>
+    table {
+        width: 60%;
+      color: #fff;
+      font-size: 14px;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+    
+    thead {
+      background: rgba(243, 140, 210, 0.4);
+    }
+    
+    th {
+      padding: 20px 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    td {
+      padding: 15px;
+      border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    }
+    
+    tbody tr {
+      cursor: pointer;
+    }
+    
+    tbody tr:hover {
+      background: rgba(243, 103, 199, 0.4);
+    }
+  </style>
+
+  <h6>Users in this website</h6>
+  <h4><em>Users</em> powered by flask</h4>
+{% endblock %}
+
+{% block body %}
+<div style="display: flex; justify-content: center;"> 
+
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Nombre</th>
+                <th>Deporte</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{user["id"]}}</td>
+                <td>{{user["name"]}}</td>
+                <td>{{user["sport"]}}s</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+</div>
+
+
+{% endblock %}

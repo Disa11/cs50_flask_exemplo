@@ -1,0 +1,49 @@
+{% extends "layout.html" %} 
+
+{% block title %}Login{% endblock %}
+
+{% block headtext %}
+<h6>Welcome to the login</h6>
+<h4><em>Login</em> powered by flask</h4>
+{% endblock %}
+
+
+{% block body %}
+
+<style>
+    button {
+        display: inline-block;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border-radius: 25px;
+        width: 80px;
+        height: 30px;
+    }
+
+    input {
+        color: black;
+        margin-top: 0;
+        background-color: rgb(255, 255, 255);
+        border-radius: 25px;
+        width: 300px;
+        height: 50px;
+        margin-bottom: 20%;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+{% if  message %}
+<h4>{{message}}</h4>
+{% endif %}
+
+<div class="search-input" style="display: flex; justify-content: center">
+    <form id="" action="/login" method="post">
+
+        <input type="text" placeholder="Username"  name="username" required/>
+        <input type="password" placeholder="Password" name="pass" required class="form-control rounded-pill"/>
+       <button type="submit">Login</button>
+    </form>
+  </div>
+
+{% endblock %}
